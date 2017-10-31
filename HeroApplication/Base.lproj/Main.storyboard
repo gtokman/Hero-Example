@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8y-iQ-z8C">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Images-->
+        <scene sceneID="9Of-c8-Uka">
+            <objects>
+                <tableViewController id="88m-ro-SFD" customClass="TableViewController" customModule="HeroApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XnV-BW-brg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="155" id="nEu-95-nXK" customClass="ImageCell" customModule="HeroApplication" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nEu-95-nXK" id="TAx-WL-X3j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UEL-7M-Qc4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UEL-7M-Qc4" firstAttribute="leading" secondItem="TAx-WL-X3j" secondAttribute="leading" id="6Qn-Qk-5t7"/>
+                                        <constraint firstAttribute="trailing" secondItem="UEL-7M-Qc4" secondAttribute="trailing" id="GVj-Vo-loT"/>
+                                        <constraint firstAttribute="bottom" secondItem="UEL-7M-Qc4" secondAttribute="bottom" id="KPb-x1-h4R"/>
+                                        <constraint firstItem="UEL-7M-Qc4" firstAttribute="top" secondItem="TAx-WL-X3j" secondAttribute="top" id="fds-4S-owF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImageView" destination="UEL-7M-Qc4" id="zrK-BA-m8b"/>
+                                    <segue destination="LHe-OI-tKE" kind="presentation" id="R0t-Yj-P57">
+                                        <segue key="commit" inheritsFrom="parent" id="5FE-ZK-5OT"/>
+                                        <segue key="preview" inheritsFrom="commit" id="s8P-Qe-OOH"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="88m-ro-SFD" id="2KG-HO-jev"/>
+                            <outlet property="delegate" destination="88m-ro-SFD" id="jjH-yc-q6e"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Images" id="tNh-nJ-wmq"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuW-Lw-cmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="136"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="fxQ-Qy-531">
+            <objects>
+                <viewController id="LHe-OI-tKE" customClass="DetailViewController" customModule="HeroApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Moa-wI-9sW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oHY-ZK-35D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oHY-ZK-35D" secondAttribute="bottom" id="1UE-cp-eFa"/>
+                            <constraint firstItem="oHY-ZK-35D" firstAttribute="leading" secondItem="Moa-wI-9sW" secondAttribute="leading" id="92M-NC-XPO"/>
+                            <constraint firstAttribute="trailing" secondItem="oHY-ZK-35D" secondAttribute="trailing" id="VnD-Ra-NOs"/>
+                            <constraint firstItem="oHY-ZK-35D" firstAttribute="top" secondItem="Moa-wI-9sW" secondAttribute="top" id="YbC-Lb-lBb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dcf-WA-3z8"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EX4-pm-OGy" appends="YES" id="qf0-wr-CNf"/>
+                        </connections>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="detailImageView" destination="oHY-ZK-35D" id="FJq-L4-ZtO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tH-L2-Ni9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="EX4-pm-OGy">
+                    <connections>
+                        <action selector="handlePan:" destination="LHe-OI-tKE" id="OCh-5q-A4u"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="inH-La-MFa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="F8y-iQ-z8C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="fzf-BI-moh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="88m-ro-SFD" kind="relationship" relationship="rootViewController" id="Hvf-iw-PRm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wlh-lL-fJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="137"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R0t-Yj-P57"/>
+    </inferredMetricsTieBreakers>
+</document>
