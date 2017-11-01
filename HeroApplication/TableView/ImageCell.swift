@@ -18,6 +18,8 @@ class ImageCell: UITableViewCell {
     var unsplashImage: Image? {
         didSet {
             cellImageView.image = UIImage(named: unsplashImage!.id)
+            // Hero ID for shared UIElement between source/destination
+            cellImageView.heroID = unsplashImage!.id
         }
     }
 
