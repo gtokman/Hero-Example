@@ -22,9 +22,7 @@ class DetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         if let image = unsplashImage {
-            detailImageView.image = UIImage(named: image.id)
-            // Hero ID for shared UIElement between source/destination
-            detailImageView.heroID = image.id
+            detailImageView.image = UIImage(named: image.id) 
         }
     }
     
